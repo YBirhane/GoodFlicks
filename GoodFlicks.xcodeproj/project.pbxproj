@@ -9,16 +9,13 @@
 /* Begin PBXBuildFile section */
 		3C32F73E1B5D64C8003831A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32F73D1B5D64C8003831A5 /* AppDelegate.swift */; };
 		3C32F7401B5D64C8003831A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32F73F1B5D64C8003831A5 /* ViewController.swift */; };
-		3C32F7431B5D64C8003831A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C32F7411B5D64C8003831A5 /* Main.storyboard */; };
 		3C32F7451B5D64C8003831A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C32F7441B5D64C8003831A5 /* Images.xcassets */; };
-		3C32F7481B5D64C8003831A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C32F7461B5D64C8003831A5 /* LaunchScreen.xib */; };
 		3C32F7541B5D64C8003831A5 /* GoodFlicksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32F7531B5D64C8003831A5 /* GoodFlicksTests.swift */; };
 		3C32F75E1B5D64DF003831A5 /* CustomSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32F75D1B5D64DF003831A5 /* CustomSignUpViewController.swift */; };
 		3C32F7601B5D64F0003831A5 /* CustomLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32F75F1B5D64EF003831A5 /* CustomLoginViewController.swift */; };
 		3C32F76A1B5D6640003831A5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7641B5D6640003831A5 /* Bolts.framework */; };
 		3C32F76B1B5D6640003831A5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7651B5D6640003831A5 /* Parse.framework */; };
 		3C32F76C1B5D6640003831A5 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7661B5D6640003831A5 /* ParseCrashReporting.framework */; };
-		3C32F76D1B5D6640003831A5 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7671B5D6640003831A5 /* ParseFacebookUtils.framework */; };
 		3C32F76E1B5D6640003831A5 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7681B5D6640003831A5 /* ParseFacebookUtilsV4.framework */; };
 		3C32F76F1B5D6640003831A5 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7691B5D6640003831A5 /* ParseUI.framework */; };
 		3C32F7711B5D6677003831A5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7701B5D6677003831A5 /* Social.framework */; };
@@ -34,6 +31,11 @@
 		3C32F7851B5D66C9003831A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7841B5D66C9003831A5 /* CoreGraphics.framework */; };
 		3C32F7871B5D66CF003831A5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7861B5D66CF003831A5 /* CFNetwork.framework */; };
 		3C32F7891B5D66D6003831A5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7881B5D66D6003831A5 /* AudioToolbox.framework */; };
+		3C5D34B01B5EF8750099CA9D /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C32F7411B5D64C8003831A5 /* Main1.storyboard */; };
+		3C5D34B11B5EF8780099CA9D /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C32F7411B5D64C8003831A5 /* Main1.storyboard */; };
+		3C7BFB6D1B5EE07000A77F39 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BFB6C1B5EE07000A77F39 /* Bolts.framework */; };
+		3C7BFB6F1B5EE07D00A77F39 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BFB6E1B5EE07D00A77F39 /* FBSDKCoreKit.framework */; };
+		3C7BFB711B5EE0A800A77F39 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BFB701B5EE0A800A77F39 /* FBSDKLoginKit.framework */; };
 		3C931F561B5D8FD3006F5D4B /* More.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C931F551B5D8FD3006F5D4B /* More.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +54,7 @@
 		3C32F73C1B5D64C8003831A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C32F73D1B5D64C8003831A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C32F73F1B5D64C8003831A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3C32F7421B5D64C8003831A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C32F7421B5D64C8003831A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main1.storyboard; sourceTree = "<group>"; };
 		3C32F7441B5D64C8003831A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C32F7471B5D64C8003831A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3C32F74D1B5D64C8003831A5 /* GoodFlicksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodFlicksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +65,6 @@
 		3C32F7641B5D6640003831A5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		3C32F7651B5D6640003831A5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		3C32F7661B5D6640003831A5 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		3C32F7671B5D6640003831A5 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		3C32F7681B5D6640003831A5 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3C32F7691B5D6640003831A5 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		3C32F7701B5D6677003831A5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -79,6 +80,10 @@
 		3C32F7841B5D66C9003831A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3C32F7861B5D66CF003831A5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3C32F7881B5D66D6003831A5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3C7BFB6C1B5EE07000A77F39 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FacebookSDK/Bolts.framework; sourceTree = SOURCE_ROOT; };
+		3C7BFB6E1B5EE07D00A77F39 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = SOURCE_ROOT; };
+		3C7BFB701B5EE0A800A77F39 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = SOURCE_ROOT; };
+		3C7BFB721B5EE36700A77F39 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		3C931F551B5D8FD3006F5D4B /* More.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = More.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,9 +96,11 @@
 				3C32F7871B5D66CF003831A5 /* CFNetwork.framework in Frameworks */,
 				3C32F7851B5D66C9003831A5 /* CoreGraphics.framework in Frameworks */,
 				3C32F7831B5D66C3003831A5 /* CoreLocation.framework in Frameworks */,
+				3C7BFB6F1B5EE07D00A77F39 /* FBSDKCoreKit.framework in Frameworks */,
 				3C32F7811B5D66BD003831A5 /* MobileCoreServices.framework in Frameworks */,
 				3C32F77F1B5D66B6003831A5 /* QuartzCore.framework in Frameworks */,
 				3C32F77D1B5D66B0003831A5 /* Security.framework in Frameworks */,
+				3C7BFB711B5EE0A800A77F39 /* FBSDKLoginKit.framework in Frameworks */,
 				3C32F77B1B5D66A0003831A5 /* StoreKit.framework in Frameworks */,
 				3C32F7791B5D6696003831A5 /* SystemConfiguration.framework in Frameworks */,
 				3C32F7771B5D668C003831A5 /* libz.dylib in Frameworks */,
@@ -102,8 +109,8 @@
 				3C32F7711B5D6677003831A5 /* Social.framework in Frameworks */,
 				3C32F76F1B5D6640003831A5 /* ParseUI.framework in Frameworks */,
 				3C32F76B1B5D6640003831A5 /* Parse.framework in Frameworks */,
+				3C7BFB6D1B5EE07000A77F39 /* Bolts.framework in Frameworks */,
 				3C32F76C1B5D6640003831A5 /* ParseCrashReporting.framework in Frameworks */,
-				3C32F76D1B5D6640003831A5 /* ParseFacebookUtils.framework in Frameworks */,
 				3C32F76A1B5D6640003831A5 /* Bolts.framework in Frameworks */,
 				3C32F76E1B5D6640003831A5 /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
@@ -122,8 +129,6 @@
 		3C32F72F1B5D64C8003831A5 = {
 			isa = PBXGroup;
 			children = (
-				3C32F78A1B5D66E4003831A5 /* Frameworks */,
-				3C32F7631B5D6640003831A5 /* parse-library-1.7.5 */,
 				3C32F73A1B5D64C8003831A5 /* GoodFlicks */,
 				3C32F7501B5D64C8003831A5 /* GoodFlicksTests */,
 				3C32F7391B5D64C8003831A5 /* Products */,
@@ -145,9 +150,10 @@
 				3C32F73D1B5D64C8003831A5 /* AppDelegate.swift */,
 				3C32F75D1B5D64DF003831A5 /* CustomSignUpViewController.swift */,
 				3C32F75F1B5D64EF003831A5 /* CustomLoginViewController.swift */,
+				3C7BFB721B5EE36700A77F39 /* Bridging-Header.h */,
 				3C32F73F1B5D64C8003831A5 /* ViewController.swift */,
 				3C931F551B5D8FD3006F5D4B /* More.swift */,
-				3C32F7411B5D64C8003831A5 /* Main.storyboard */,
+				3C32F7411B5D64C8003831A5 /* Main1.storyboard */,
 				3C32F7441B5D64C8003831A5 /* Images.xcassets */,
 				3C32F7461B5D64C8003831A5 /* LaunchScreen.xib */,
 				3C32F73B1B5D64C8003831A5 /* Supporting Files */,
@@ -158,7 +164,12 @@
 		3C32F73B1B5D64C8003831A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C32F78A1B5D66E4003831A5 /* Frameworks */,
+				3C32F7631B5D6640003831A5 /* parse-library-1.7.5 */,
 				3C32F73C1B5D64C8003831A5 /* Info.plist */,
+				3C7BFB6E1B5EE07D00A77F39 /* FBSDKCoreKit.framework */,
+				3C7BFB701B5EE0A800A77F39 /* FBSDKLoginKit.framework */,
+				3C7BFB6C1B5EE07000A77F39 /* Bolts.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -186,11 +197,11 @@
 				3C32F7641B5D6640003831A5 /* Bolts.framework */,
 				3C32F7651B5D6640003831A5 /* Parse.framework */,
 				3C32F7661B5D6640003831A5 /* ParseCrashReporting.framework */,
-				3C32F7671B5D6640003831A5 /* ParseFacebookUtils.framework */,
 				3C32F7681B5D6640003831A5 /* ParseFacebookUtilsV4.framework */,
 				3C32F7691B5D6640003831A5 /* ParseUI.framework */,
 			);
-			path = "parse-library-1.7.5";
+			name = "parse-library-1.7.5";
+			path = "../parse-library-1.7.5";
 			sourceTree = "<group>";
 		};
 		3C32F78A1B5D66E4003831A5 /* Frameworks */ = {
@@ -211,6 +222,7 @@
 				3C32F7701B5D6677003831A5 /* Social.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +305,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C32F7431B5D64C8003831A5 /* Main.storyboard in Resources */,
-				3C32F7481B5D64C8003831A5 /* LaunchScreen.xib in Resources */,
 				3C32F7451B5D64C8003831A5 /* Images.xcassets in Resources */,
+				3C5D34B01B5EF8750099CA9D /* Main1.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C5D34B11B5EF8780099CA9D /* Main1.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,12 +352,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3C32F7411B5D64C8003831A5 /* Main.storyboard */ = {
+		3C32F7411B5D64C8003831A5 /* Main1.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3C32F7421B5D64C8003831A5 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main1.storyboard;
 			sourceTree = "<group>";
 		};
 		3C32F7461B5D64C8003831A5 /* LaunchScreen.xib */ = {
@@ -449,10 +461,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.5",
+					"$(PROJECT_DIR)/FacebookSDK",
 				);
 				INFOPLIST_FILE = GoodFlicks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoodFlicks/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -463,10 +477,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.5",
+					"$(PROJECT_DIR)/FacebookSDK",
 				);
 				INFOPLIST_FILE = GoodFlicks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoodFlicks/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -485,6 +501,7 @@
 				INFOPLIST_FILE = GoodFlicksTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoodFlicks/Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoodFlicks.app/GoodFlicks";
 			};
 			name = Debug;
@@ -500,6 +517,7 @@
 				INFOPLIST_FILE = GoodFlicksTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoodFlicks/Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoodFlicks.app/GoodFlicks";
 			};
 			name = Release;

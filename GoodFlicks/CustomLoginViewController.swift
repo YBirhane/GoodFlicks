@@ -8,11 +8,54 @@
 
 import UIKit
 import Parse
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 
 class CustomLogInViewController: UIViewController {
     
+    
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+ 
+    @IBAction func FacebookLogin(sender: AnyObject) {
+        var permissions = [ "public_profile", "email", "user_friends" ]
+        
+        
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions,  block: { (user: PFUser?, error: NSError?) -> Void in
+            
+            if let user = user {
+                
+                if user.isNew {
+                    println("User signed up and logged in through Facebook!")
+                }
+                    
+                else {
+                    println("User logged in through Facebook!")
+                }
+            }
+            else {
+                    println("Uh oh. The user cancelled the Facebook login.")
+            }
+                
+            
+        })
+        
+        self.performSegueWithIdentifier("login", sender: self)
+        
+        
+    }
+    
+    
+    
+    
+    
+
+
+ 
+
+    
+
     
     var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
     
@@ -26,7 +69,12 @@ class CustomLogInViewController: UIViewController {
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         
         view.addSubview(self.actInd)
+        
+        //self.loadData()
+
         // Do any additional setup after loading the view.
+                
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,9 +116,7 @@ class CustomLogInViewController: UIViewController {
                 
                 if((user) != nil) {
                     
-                    //var alert = UIAlertView(title: "Success", message: "Logged in", delegate: self, cancelButtonTitle: "OK")
-                    //alert.show()
-                    //let TabBarViewController =
+                   
                     self.performSegueWithIdentifier("login", sender: self)
                 }
                 else{
@@ -91,6 +137,5 @@ class CustomLogInViewController: UIViewController {
     
     
     
-    
-    
+
 }
