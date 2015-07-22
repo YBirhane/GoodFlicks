@@ -90,8 +90,10 @@ class CustomSignUpViewController: UIViewController {
                 }
                 else{
                     
-                    var alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
+                    /*var alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
+                    alert.show()*/
+                    
+                    self.performSegueWithIdentifier("cancel", sender: self)
                 }
             })
         }

@@ -21,6 +21,41 @@ class AppDelegate: UIResponder , UIApplicationDelegate{
         // Override point for customization after application launch.
         Parse.setApplicationId("iLzubsq0ShR5lpWoNMex8YFpuuejArNcZOLiUWnE", clientKey: "6K21KpbepZ92aRhahkoDbfMkrQFhLX4O3fy8g48Q")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+     
+        
+        
+        var user = PFUser.currentUser()
+        var storyboard = UIStoryboard(name: "Main1", bundle: nil)
+
+  
+        
+        if (user != nil) {
+            // 3
+            // if we have a user, set the TabBarController to be the initial View Controller
+            
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+           
+        } else {
+            // 4
+            // Otherwise set the LoginViewController to be the first
+            
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            let loginViewController = CustomLogInViewController()
+            
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("LogInView") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
     

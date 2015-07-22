@@ -8,7 +8,7 @@
         <!--Custom Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CustomLogInViewController" customModule="GoodFlicks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInView" id="BYZ-38-t0r" customClass="CustomLogInViewController" customModule="GoodFlicks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Lists" image="My Lists" id="Y3i-Rb-6bs"/>
+                    <tabBarItem key="tabBarItem" title="" image="My Lists" id="Y3i-Rb-6bs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OlN-UJ-L4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="OUa-du-Jco"/>
+                    <tabBarItem key="tabBarItem" title="" image="Search" id="OUa-du-Jco"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2B-H2-8Es" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="xUH-tj-wjG"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home" id="xUH-tj-wjG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sto-LE-HaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +168,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" image="More" id="H18-w1-g1D"/>
+                    <tabBarItem key="tabBarItem" title="" image="More" id="H18-w1-g1D"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="logout" id="LW2-Ie-FSM"/>
@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="135" y="1462"/>
         </scene>
-        <!--Friends-->
+        <!--Ask-->
         <scene sceneID="n67-Xk-0nD">
             <objects>
-                <viewController title="Friends" id="8EX-a9-lap" sceneMemberID="viewController">
+                <viewController title="Ask" id="8EX-a9-lap" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x4I-s1-zhf"/>
                         <viewControllerLayoutGuide type="bottom" id="o0s-vU-bDo"/>
@@ -213,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" image="Friends" id="w82-IL-1Yw"/>
+                    <tabBarItem key="tabBarItem" title="" image="Ask" id="w82-IL-1Yw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKn-BX-SYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -293,7 +293,7 @@
                     <connections>
                         <outlet property="emailField" destination="gwT-bf-TrO" id="3sG-FG-U7e"/>
                         <outlet property="passwordField" destination="Bwm-lY-X5L" id="y1D-Kh-tIt"/>
-                        <outlet property="usernameField" destination="Bwm-lY-X5L" id="xG7-qV-O0C"/>
+                        <outlet property="usernameField" destination="lBM-L9-BfD" id="P5E-Of-JrX"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="cancel" id="kTd-TX-XD2"/>
                     </connections>
                 </viewController>
@@ -303,8 +303,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Friends" width="50" height="48"/>
-        <image name="Home" width="49" height="51"/>
+        <image name="Ask" width="17" height="25"/>
+        <image name="Home" width="35" height="30"/>
         <image name="More" width="40" height="8"/>
         <image name="My Lists" width="25" height="26"/>
         <image name="Search" width="25" height="26"/>

@@ -120,7 +120,7 @@ class CustomLogInViewController: UIViewController {
                     self.performSegueWithIdentifier("login", sender: self)
                 }
                 else{
-                    var alert = UIAlertView(title: "Error", message: "Incorrect Username of Password", delegate: self, cancelButtonTitle: "OK")
+                    var alert = UIAlertView(title: "Error", message: "Incorrect Username or Password", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                     
                 }
@@ -129,6 +129,7 @@ class CustomLogInViewController: UIViewController {
             
         }
     }
+    
     
     @IBAction func signupAction(sender: AnyObject) {
         
