@@ -1,16 +1,19 @@
 //
-//  More.swift
+//  MoreViewController.swift
 //  GoodFlicks
 //
-//  Created by Yeabtsega Birhane on 7/20/15.
+//  Created by Yeabtsega Birhane on 7/23/15.
 //  Copyright (c) 2015 Yeabtsega Birhane. All rights reserved.
 //
 
 import UIKit
-import Parse
 
-class More: UIViewController {
+class MoreViewController: UIViewController {
 
+    @IBAction func seeFriends(sender: AnyObject) {
+        self.performSegueWithIdentifier("friends", sender: self)
+    }
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +24,7 @@ class More: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func logOut(){
-        PFUser.logOut()
-        self.performSegueWithIdentifier("logout", sender: self)
-    }
+    
 
     /*
     // MARK: - Navigation

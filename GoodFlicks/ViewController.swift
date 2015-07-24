@@ -97,9 +97,12 @@ class ViewController: UIViewController,PFLogInViewControllerDelegate,PFSignUpVie
         
         self.performSegueWithIdentifier("custom", sender: self)
     }
-    
     @IBAction func logoutAction(sender: AnyObject) {
         PFUser.logOut()
+        performSegueWithIdentifier("logout", sender: self)
+    }
+    @IBAction func seeFriends(sender: AnyObject) {
+        self.performSegueWithIdentifier("friends", sender: self)
     }
 }
 

@@ -36,7 +36,6 @@
 		3C7BFB6D1B5EE07000A77F39 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BFB6C1B5EE07000A77F39 /* Bolts.framework */; };
 		3C7BFB6F1B5EE07D00A77F39 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BFB6E1B5EE07D00A77F39 /* FBSDKCoreKit.framework */; };
 		3C7BFB711B5EE0A800A77F39 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BFB701B5EE0A800A77F39 /* FBSDKLoginKit.framework */; };
-		3C931F561B5D8FD3006F5D4B /* More.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C931F551B5D8FD3006F5D4B /* More.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +83,6 @@
 		3C7BFB6E1B5EE07D00A77F39 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = SOURCE_ROOT; };
 		3C7BFB701B5EE0A800A77F39 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = SOURCE_ROOT; };
 		3C7BFB721B5EE36700A77F39 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		3C931F551B5D8FD3006F5D4B /* More.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = More.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +150,6 @@
 				3C32F75F1B5D64EF003831A5 /* CustomLoginViewController.swift */,
 				3C7BFB721B5EE36700A77F39 /* Bridging-Header.h */,
 				3C32F73F1B5D64C8003831A5 /* ViewController.swift */,
-				3C931F551B5D8FD3006F5D4B /* More.swift */,
 				3C32F7411B5D64C8003831A5 /* Main1.storyboard */,
 				3C32F7441B5D64C8003831A5 /* Images.xcassets */,
 				3C32F7461B5D64C8003831A5 /* LaunchScreen.xib */,
@@ -325,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C931F561B5D8FD3006F5D4B /* More.swift in Sources */,
 				3C32F7401B5D64C8003831A5 /* ViewController.swift in Sources */,
 				3C32F7601B5D64F0003831A5 /* CustomLoginViewController.swift in Sources */,
 				3C32F73E1B5D64C8003831A5 /* AppDelegate.swift in Sources */,
