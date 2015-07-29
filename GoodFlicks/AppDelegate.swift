@@ -21,7 +21,9 @@ class AppDelegate: UIResponder , UIApplicationDelegate{
         // Override point for customization after application launch.
         Parse.setApplicationId("iLzubsq0ShR5lpWoNMex8YFpuuejArNcZOLiUWnE", clientKey: "6K21KpbepZ92aRhahkoDbfMkrQFhLX4O3fy8g48Q")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
-     
+        
+                
+        
         
         
         var user = PFUser.currentUser()
@@ -55,7 +57,7 @@ class AppDelegate: UIResponder , UIApplicationDelegate{
             
             self.window?.makeKeyAndVisible()
         }
-        
+       
         return true
     }
     

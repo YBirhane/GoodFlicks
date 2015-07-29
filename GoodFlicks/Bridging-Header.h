@@ -10,6 +10,6 @@
 #define GoodFlicks_Bridging_Header_h
 
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
-
+#import "ConvenienceKit.h"
 
 #endif
