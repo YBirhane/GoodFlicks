@@ -1,6 +1,6 @@
 //
-//  GoodFlicksTests.swift
-//  GoodFlicksTests
+//  NewTests.swift
+//  NewTests
 //
 //  Created by Yeabtsega Birhane on 7/29/15.
 //  Copyright (c) 2015 Yeabtsega Birhane. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class GoodFlicksTests: XCTestCase {
+class NewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

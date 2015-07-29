@@ -11,16 +11,28 @@ import UIKit
 import Parse
 import ParseUI
 
-class ViewController: UIViewController,PFLogInViewControllerDelegate,PFSignUpViewControllerDelegate {
+class ViewController: UIViewController,PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     var logInViewController: PFLogInViewController? = PFLogInViewController()
     var signUpViewController: PFSignUpViewController? = PFSignUpViewController()
     
+//    var allowLossyConversion: Bool = false
+//    
+//    let json = JSON(data: dataFromNetworking)
+//        let json = JSON(jsonObject)
+//    
+//  let dataFromString = jsonString.dataUsingEncoding
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
+        
+        /*    if (NSUTF8StringEncoding, allowLossyConversion) {
+            let json = JSON(data: dataFromString)
+    }*/
+
+                
     }
     
     override func viewDidAppear(animated: Bool){
