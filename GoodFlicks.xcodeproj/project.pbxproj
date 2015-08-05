@@ -27,7 +27,9 @@
 		3C32F7851B5D66C9003831A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7841B5D66C9003831A5 /* CoreGraphics.framework */; };
 		3C32F7871B5D66CF003831A5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7861B5D66CF003831A5 /* CFNetwork.framework */; };
 		3C32F7891B5D66D6003831A5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7881B5D66D6003831A5 /* AudioToolbox.framework */; };
-		3C3894171B674103005F5FED /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3894161B674103005F5FED /* MovieSearchViewController.swift */; };
+		3C3541881B6F25DA00BF8364 /* MovieAskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3541871B6F25DA00BF8364 /* MovieAskViewController.swift */; };
+		3C35418C1B7042D000BF8364 /* MovieAskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C35418B1B7042D000BF8364 /* MovieAskTableViewCell.swift */; };
+		3C35418E1B70481500BF8364 /* CheckboxChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C35418D1B70481500BF8364 /* CheckboxChecked.png */; };
 		3C40AE501B6996EE008302A2 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C32F7411B5D64C8003831A5 /* Main1.storyboard */; };
 		3C43C1A61B699488002D9DDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C43C1A51B699488002D9DDC /* Foundation.framework */; };
 		3C7BFB6D1B5EE07000A77F39 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BFB6C1B5EE07000A77F39 /* Bolts.framework */; };
@@ -39,8 +41,12 @@
 		3CC391AC1B643150008BA5CA /* FriendSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC391AB1B643150008BA5CA /* FriendSearchTableViewCell.swift */; };
 		3CC391AE1B643266008BA5CA /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC391AD1B643266008BA5CA /* FriendSearchViewController.swift */; };
 		3CC391B01B6432DC008BA5CA /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC391AF1B6432DC008BA5CA /* ParseHelper.swift */; };
-		3CC391B41B66CF89008BA5CA /* TMDbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC391B31B66CF89008BA5CA /* TMDbAPI.swift */; };
 		3CC391B71B66D727008BA5CA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC391B61B66D727008BA5CA /* Movie.swift */; };
+		3CCC5DB11B6EE77700175842 /* TMDbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCC5DB01B6EE77700175842 /* TMDbHelper.swift */; };
+		3CCC5DB31B6EE7F200175842 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCC5DB21B6EE7F200175842 /* SearchViewController.swift */; };
+		3CCC5DB51B6EE86A00175842 /* SearchedMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCC5DB41B6EE86A00175842 /* SearchedMoviesViewController.swift */; };
+		3CCC5DB71B6EE93400175842 /* SearchedMoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCC5DB61B6EE93400175842 /* SearchedMoviesCollectionViewCell.swift */; };
+		3CCC5DB91B6EE96400175842 /* MoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCC5DB81B6EE96400175842 /* MoreInformationViewController.swift */; };
 		3CE37A781B69781600BA7C53 /* Tests.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CE37A581B69781600BA7C53 /* Tests.json */; };
 		3CE37AA51B697B9E00BA7C53 /* GoodFlicksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE37AA41B697B9E00BA7C53 /* GoodFlicksTests.swift */; };
 		ADA7EF3224949F8CED3E8F6E /* Pods_GoodFlicks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7ACED38091663D0FAB78021 /* Pods_GoodFlicks.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -83,7 +89,9 @@
 		3C32F7841B5D66C9003831A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3C32F7861B5D66CF003831A5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3C32F7881B5D66D6003831A5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		3C3894161B674103005F5FED /* MovieSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieSearchViewController.swift; path = "View Controllers/MovieSearchViewController.swift"; sourceTree = "<group>"; };
+		3C3541871B6F25DA00BF8364 /* MovieAskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAskViewController.swift; sourceTree = "<group>"; };
+		3C35418B1B7042D000BF8364 /* MovieAskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieAskTableViewCell.swift; path = "../View Controllers/MovieAskTableViewCell.swift"; sourceTree = "<group>"; };
+		3C35418D1B70481500BF8364 /* CheckboxChecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckboxChecked.png; sourceTree = "<group>"; };
 		3C43C1A51B699488002D9DDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C7BFB6C1B5EE07000A77F39 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FacebookSDK/Bolts.framework; sourceTree = SOURCE_ROOT; };
 		3C7BFB6E1B5EE07D00A77F39 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = SOURCE_ROOT; };
@@ -102,8 +110,12 @@
 		3CC391AB1B643150008BA5CA /* FriendSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchTableViewCell.swift; sourceTree = "<group>"; };
 		3CC391AD1B643266008BA5CA /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendSearchViewController.swift; path = "View Controllers/FriendSearchViewController.swift"; sourceTree = "<group>"; };
 		3CC391AF1B6432DC008BA5CA /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
-		3CC391B31B66CF89008BA5CA /* TMDbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDbAPI.swift; sourceTree = "<group>"; };
 		3CC391B61B66D727008BA5CA /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		3CCC5DB01B6EE77700175842 /* TMDbHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDbHelper.swift; sourceTree = "<group>"; };
+		3CCC5DB21B6EE7F200175842 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3CCC5DB41B6EE86A00175842 /* SearchedMoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchedMoviesViewController.swift; path = "View Controllers/SearchedMoviesViewController.swift"; sourceTree = "<group>"; };
+		3CCC5DB61B6EE93400175842 /* SearchedMoviesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchedMoviesCollectionViewCell.swift; path = "View Controllers/SearchedMoviesCollectionViewCell.swift"; sourceTree = "<group>"; };
+		3CCC5DB81B6EE96400175842 /* MoreInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreInformationViewController.swift; path = "View Controllers/MoreInformationViewController.swift"; sourceTree = "<group>"; };
 		3CE37A131B69772300BA7C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CE37A141B69772300BA7C53 /* GoodFlicks_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoodFlicks_Tests.swift; path = "../GoodFlicks Tests/GoodFlicks_Tests.swift"; sourceTree = "<group>"; };
 		3CE37A491B69781600BA7C53 /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayTests.swift; path = "../../../../Desktop/SwiftyJSON-master/Tests/ArrayTests.swift"; sourceTree = "<group>"; };
@@ -215,6 +227,7 @@
 		3C32F73B1B5D64C8003831A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C35418D1B70481500BF8364 /* CheckboxChecked.png */,
 				3C32F78A1B5D66E4003831A5 /* Frameworks */,
 				3C32F7631B5D6640003831A5 /* parse-library-1.7.5 */,
 				3C32F73C1B5D64C8003831A5 /* Info.plist */,
@@ -281,10 +294,14 @@
 			isa = PBXGroup;
 			children = (
 				3CB4E3B01B621A8200B83EA5 /* CustomLoginViewController.swift */,
+				3CCC5DB21B6EE7F200175842 /* SearchViewController.swift */,
+				3CCC5DB41B6EE86A00175842 /* SearchedMoviesViewController.swift */,
+				3CCC5DB61B6EE93400175842 /* SearchedMoviesCollectionViewCell.swift */,
+				3CCC5DB81B6EE96400175842 /* MoreInformationViewController.swift */,
 				3CB4E3B11B621A8200B83EA5 /* CustomSignUpViewController.swift */,
 				3CB4E3B31B621A8200B83EA5 /* ViewController.swift */,
 				3CC391AD1B643266008BA5CA /* FriendSearchViewController.swift */,
-				3C3894161B674103005F5FED /* MovieSearchViewController.swift */,
+				3C3541871B6F25DA00BF8364 /* MovieAskViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -293,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				3CC391AB1B643150008BA5CA /* FriendSearchTableViewCell.swift */,
+				3C35418B1B7042D000BF8364 /* MovieAskTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -339,7 +357,7 @@
 		3CC391B51B66CF99008BA5CA /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				3CC391B31B66CF89008BA5CA /* TMDbAPI.swift */,
+				3CCC5DB01B6EE77700175842 /* TMDbHelper.swift */,
 				3CC391B61B66D727008BA5CA /* Movie.swift */,
 			);
 			name = APIs;
@@ -510,6 +528,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C35418E1B70481500BF8364 /* CheckboxChecked.png in Resources */,
 				3C32F7451B5D64C8003831A5 /* Images.xcassets in Resources */,
 				3CE37A781B69781600BA7C53 /* Tests.json in Resources */,
 				3C40AE501B6996EE008302A2 /* Main1.storyboard in Resources */,
@@ -578,12 +597,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CCC5DB11B6EE77700175842 /* TMDbHelper.swift in Sources */,
+				3CCC5DB31B6EE7F200175842 /* SearchViewController.swift in Sources */,
+				3CCC5DB51B6EE86A00175842 /* SearchedMoviesViewController.swift in Sources */,
 				3CC391AC1B643150008BA5CA /* FriendSearchTableViewCell.swift in Sources */,
-				3CC391B41B66CF89008BA5CA /* TMDbAPI.swift in Sources */,
 				3CC391B71B66D727008BA5CA /* Movie.swift in Sources */,
-				3C3894171B674103005F5FED /* MovieSearchViewController.swift in Sources */,
+				3CCC5DB71B6EE93400175842 /* SearchedMoviesCollectionViewCell.swift in Sources */,
+				3C35418C1B7042D000BF8364 /* MovieAskTableViewCell.swift in Sources */,
 				3CB4E3B71B621A8200B83EA5 /* ViewController.swift in Sources */,
+				3CCC5DB91B6EE96400175842 /* MoreInformationViewController.swift in Sources */,
 				3CC391B01B6432DC008BA5CA /* ParseHelper.swift in Sources */,
+				3C3541881B6F25DA00BF8364 /* MovieAskViewController.swift in Sources */,
 				3CB4E3B41B621A8200B83EA5 /* CustomLoginViewController.swift in Sources */,
 				3CB4E3B51B621A8200B83EA5 /* CustomSignUpViewController.swift in Sources */,
 				3CC391AE1B643266008BA5CA /* FriendSearchViewController.swift in Sources */,

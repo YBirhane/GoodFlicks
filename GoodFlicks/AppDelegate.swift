@@ -24,7 +24,7 @@ class AppDelegate: UIResponder , UIApplicationDelegate{
         
                 
         
-        
+     
         
         var user = PFUser.currentUser()
         var storyboard = UIStoryboard(name: "Main1", bundle: nil)

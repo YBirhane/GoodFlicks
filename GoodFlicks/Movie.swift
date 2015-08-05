@@ -8,21 +8,16 @@
 
 import Foundation
 
-class Movie{
+class Movie: NSObject {
     
-   var id: Int!
+    var title: String!
     var summary: String!
-    var posterImage: String!
-    //var posterImageData : NSData?
+    var poster: String!
     
-    init(id: Int, summary: String, posterImage:String){
-        self.id = id
-        self.summary = summary
-        self.posterImage = posterImage
+    
+    override init(){
+        
     }
     
-    func toJSON() -> String {
-        return ""
-    }
 
 }
