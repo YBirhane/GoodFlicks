@@ -7,15 +7,18 @@
 //
 
 import UIKit
-
+import Mixpanel
 class MoreInformationViewController: UIViewController {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
     
+    @IBOutlet var infoView: UIView!
+    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     var movieTitleText = String()
     var moviePosterImage = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
+         infoView.backgroundColor = UIColor(patternImage: UIImage(named: "MaskCopy.png")!)
         movieTitle.text = movieTitleText
         moviePoster.image = moviePosterImage
         // Do any additional setup after loading the view.
@@ -30,15 +33,13 @@ class MoreInformationViewController: UIViewController {
         movieTitle = title
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destViewController: MovieAskViewController = segue.destinationViewController as! MovieAskViewController
         
-        destViewController.movieTitleText = movieTitle.text!
-        destViewController.moviePosterImage = moviePoster.image!
+        destViewController.movieTitleText = movieTitleText
+        destViewController.moviePosterImage = moviePosterImage
     }
-
-   
+      
     
     /*
     func pickMoviePoster(image: UIImage){

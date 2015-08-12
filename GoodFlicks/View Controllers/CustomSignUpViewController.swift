@@ -8,9 +8,10 @@
 
 import UIKit
 import Parse
+import Mixpanel
 
 class CustomSignUpViewController: UIViewController {
-    
+    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -52,7 +53,7 @@ class CustomSignUpViewController: UIViewController {
     
     @IBAction func signUpAction(sender: AnyObject) {
         
-        
+        mixpanel.track("CustomSignUp")
         
         var username = self.usernameField.text
         var password = self.passwordField.text
@@ -93,17 +94,23 @@ class CustomSignUpViewController: UIViewController {
                     /*var alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
                     alert.show()*/
                     
-                    self.performSegueWithIdentifier("cancel", sender: self)
+                    //self.performSegueWithIdentifier("cancel", sender: self)
                 }
             })
+            performSegueWithIdentifier("signedUp", sender: self)
         }
         
         
         
     }
     
-    @IBAction func cancelSignUp(sender: AnyObject){
-        self.performSegueWithIdentifier("cancel", sender: self)
-        
+    
+    
+    override func touchesBegan(touches: Set <NSObject>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            self.view.endEditing(true)
+        }
+        super.touchesBegan(touches, withEvent:event!)
     }
+
 }

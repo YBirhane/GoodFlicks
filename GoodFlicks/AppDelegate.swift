@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import FBSDKCoreKit
 import FBSDKLoginKit
-
+import Mixpanel
 @UIApplicationMain
 class AppDelegate: UIResponder , UIApplicationDelegate{
     
@@ -24,12 +24,16 @@ class AppDelegate: UIResponder , UIApplicationDelegate{
         
                 
         
+        Mixpanel.sharedInstanceWithToken("705a7d944ea3c340f2a86075f8449dc9")
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("App launched")
      
-        
         var user = PFUser.currentUser()
         var storyboard = UIStoryboard(name: "Main1", bundle: nil)
 
   
+        
+
         
         if (user != nil) {
             // 3

@@ -7,25 +7,35 @@
 //
 
 import UIKit
+import Parse
+import Mixpanel
+
+protocol MovieAskTableViewCellDelegate: class {
+    func cell(cell: MovieAskTableViewCell, didSelectToAskUser user: PFUser)
+    func cell(cell: MovieAskTableViewCell, didSelectToUnaskUser user: PFUser)
+}
+
 
 class MovieAskTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var checkBox: UIButton!
-
-    @IBOutlet weak var askFriendLabel: UILabel!
+  let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+    
+    @IBOutlet weak var checkBoxImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        checkBoxImage.image = UIImage(named: "CheckboxUnchecked-1.png")
+        //self.backgroundColor = UIColor(patternImage: UIImage(named: "MaskCopy.png")!)
         // Initialization code
+    }
+
    
-    }
+    @IBOutlet weak var askFriendLabel: UILabel!
+    
+    weak var delegate: MovieAskTableViewCellDelegate?
+    
 
-    @IBAction func checkboxClicked(sender: AnyObject) {
-        
-    }
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
 
 }

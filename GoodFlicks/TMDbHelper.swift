@@ -83,8 +83,14 @@ class TMDbHelper: NSObject {
                         
                         
                         movie.title = posterDict.objectForKey("original_title") as! String
-                        movie.summary = posterDict.objectForKey("overview") as! String
                         
+                        if posterDict["overview"] is NSNull{
+                            movie.summary = "Summary not available"
+                        }
+                        else{
+                            movie.summary = posterDict.objectForKey("overview") as! String
+
+                        }
                         // if poster path is nill set it to No movie poster
                         
                         if posterDict["poster_path"] is NSNull{

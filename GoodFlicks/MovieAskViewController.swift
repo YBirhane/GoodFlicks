@@ -8,14 +8,15 @@
 
 import UIKit
 import Parse
-
+import Mixpanel
 class MovieAskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
     
+    @IBOutlet var askView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    
+    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     // UI
     var movieTitleText = String()
     var moviePosterImage = UIImage()
@@ -25,49 +26,42 @@ class MovieAskViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // Friends list and IDs retrieved from Parse
     var friendsList: [String] = []
-    var friendsListID: [String] = []
+    var friendsListID: [String!] = []
 
     // Users and Ids of friends User asks
     
     var selectedFriends: [String] = []
     var selectedFriendsID: [String] = []
    
-   /* var groupMessage = PFObject(className:"Message")
-    var groupACL = PFACL.ACL()
-    
-    // userList is an NSArray with the users we are sending this message to.
-    for (user : PFUser in userList) {
-    groupACL.setReadAccess(true, forUser:user)
-    groupACL.setWriteAccess(true, forUser:user)
-    }
-    
-    groupMessage.ACL = groupACL
-    groupMessage.saveInBackground()
-*/
+
 
     @IBAction func askButtonClicked(sender: AnyObject) {
+        selectedFriendsID.append(PFUser.currentUser()!.objectId!)
         var postACL = PFACL()
         var posts = PFObject(className: "Ask")
         var imageData = UIImagePNGRepresentation(moviePoster.image)
         posts["imageFile"] = PFFile(data: imageData)
         posts["Title"] = movieTitle.text
-        
+        posts["User"] = PFUser.currentUser()!
         for user in selectedFriendsID {
            postACL.setWriteAccess(true, forUserId: user)
             postACL.setReadAccess(true, forUserId: user)
         }
-        
+        mixpanel.track("First Ask Button Clicked")
         posts.ACL = postACL
         posts.saveInBackground()
+        performSegueWithIdentifier("backToSearch", sender: self)
         
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        askView.backgroundColor = UIColor(patternImage: UIImage(named: "MaskCopy.png")!)
         movieTitle.text = movieTitleText
         moviePoster.image = moviePosterImage
         tableView.delegate = self
+        
         tableView.dataSource = self
         self.getFriends()
         
@@ -110,7 +104,7 @@ class MovieAskViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell:MovieAskTableViewCell = tableView.dequeueReusableCellWithIdentifier("MovieAskCell") as! MovieAskTableViewCell
             
             cell.askFriendLabel.text = friendsList[indexPath.row]
-            
+            //cell.user!.username = friendsList[indexPath.row]
             
             
             
@@ -125,14 +119,25 @@ class MovieAskViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
         var rowSelected = tableView.cellForRowAtIndexPath(indexPath) as! MovieAskTableViewCell
-
-        selectedFriends.append(rowSelected.askFriendLabel.text!)
-        selectedFriendsID.append(friendsListID[indexPath.row])
-        println(selectedFriends)
-        println(selectedFriendsID)
+        
+        if (rowSelected.checkBoxImage.image  == UIImage(named: "CheckboxChecked.png")){
+            println(friendsListID[indexPath.row])
+            removeObject(rowSelected.askFriendLabel.text! , fromArray: &selectedFriends)
+            removeObject(friendsListID[indexPath.row], fromArray: &selectedFriendsID)
+            rowSelected.checkBoxImage.image = UIImage(named: "CheckboxUnchecked-1.png")
+         }
+        
+        else{
+        
+         rowSelected.checkBoxImage.image = UIImage(named: "CheckboxChecked.png")
+         selectedFriends.append(rowSelected.askFriendLabel.text!)
+         selectedFriendsID.append(friendsListID[indexPath.row])
+         println(selectedFriends)
+         println(selectedFriendsID)
+        }
     }
 
    
 }
+

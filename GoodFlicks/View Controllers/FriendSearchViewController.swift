@@ -8,12 +8,12 @@
 
 import UIKit
 import Parse
-
+import Mixpanel
 class FriendSearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    
+    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     // stores all the users that match the current search query
     var users: [PFUser]?
     
@@ -154,7 +154,7 @@ extension FriendSearchViewController: FriendSearchTableViewCellDelegate {
     
     func cell(cell: FriendSearchTableViewCell, didSelectFollowUser user: PFUser) {
         ParseHelper.addFollowRelationshipFromUser(PFUser.currentUser()!, toUser: user)
-        ParseHelper.addFollowRelationshipToReceiver(user, askUser: PFUser.currentUser()!)
+        ParseHelper.addFollowRelationshipFromUser(user, toUser: PFUser.currentUser()!)
         // update local cache
         followingUsers?.append(user)
     }
@@ -164,7 +164,7 @@ extension FriendSearchViewController: FriendSearchTableViewCellDelegate {
             ParseHelper.removeFollowRelationshipFromUser(PFUser.currentUser()!, toUser: user)
             ParseHelper.removeFollowRelationshipFromUser(user, toUser: PFUser.currentUser()!)
             // update local cache
-            //removeObject(user, fromArray: &followingUsers)
+            removeObject(user, fromArray: &followingUsers)
             self.followingUsers = followingUsers
         }
     }

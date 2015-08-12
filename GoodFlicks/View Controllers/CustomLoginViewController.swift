@@ -10,10 +10,10 @@ import UIKit
 import Parse
 import FBSDKCoreKit
 import FBSDKLoginKit
-
+import Mixpanel
 
 class CustomLogInViewController: UIViewController {
-    
+    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -21,27 +21,50 @@ class CustomLogInViewController: UIViewController {
     @IBAction func FacebookLogin(sender: AnyObject) {
         var permissions = [ "public_profile", "email", "user_friends" ]
         
-        
+        mixpanel.track("Network Login", properties : ["Network" : "Facebook"])
         PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions,  block: { (user: PFUser?, error: NSError?) -> Void in
             
             if let user = user {
                 
                 if user.isNew {
                     println("User signed up and logged in through Facebook!")
+                     self.performSegueWithIdentifier("login", sender: self)
                 }
                     
                 else {
                     println("User logged in through Facebook!")
+                     self.performSegueWithIdentifier("login", sender: self)
                 }
+                
             }
             else {
+                
                     println("Uh oh. The user cancelled the Facebook login.")
             }
                 
             
         })
         
-        self.performSegueWithIdentifier("login", sender: self)
+        let request = FBSDKGraphRequest(graphPath:"me", parameters:nil)
+        
+        // Send request to Facebook
+        request.startWithCompletionHandler {
+            
+            (connection, result, error) in
+            
+            if error != nil {
+                // Some error checking here
+            }
+            else if let userData = result as? [String:AnyObject] {
+                
+                // Access user data
+                let username = userData["name"] as? String
+                println(username)
+                // ....
+            }
+        }
+        
+       
         
         
     }
@@ -136,7 +159,13 @@ class CustomLogInViewController: UIViewController {
         self.performSegueWithIdentifier("signup", sender: self)
     }
     
-    
+    override func touchesBegan(touches: Set <NSObject>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            self.view.endEditing(true)
+        }
+        super.touchesBegan(touches, withEvent:event!)
+    }
+
     
 
 }

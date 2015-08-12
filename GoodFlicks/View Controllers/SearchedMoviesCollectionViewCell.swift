@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Mixpanel
 
 class SearchedMoviesCollectionViewCell: UICollectionViewCell {
+    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     
-    var imageView: UIImageView!
     var imageOffset: CGPoint!
     var imageURL: UIImage!
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     
-    var image: UIImage!{
+    
+  /* var image: UIImage!{
         get{
             return self.image
         }
@@ -30,14 +33,35 @@ class SearchedMoviesCollectionViewCell: UICollectionViewCell {
             }
         }
         
+    }*/
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.imageView.image = UIImage(named: "NoImage.png")
+        
+        // Initialization code
+    }
+    override func prepareForReuse() {
+        
+        super.prepareForReuse()
+        self.imageView.image = UIImage(named: "NoImage.png")
+        
     }
     
-    
-    
+    /*
     // Necessary initializer to set up Image View
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         setUpImageView()
+        
+        
+        label.textColor = UIColor(white: 0.45, alpha: 1.0)
+        //label.font = UIFont(name: MegaTheme.fontName, size: 11)
+        
+        imageView.layer.borderColor = UIColor(white: 0.2, alpha: 1.0).CGColor
+        imageView.layer.borderWidth = 0.5
+
     }
     
     required init(coder aDecoder: NSCoder){
@@ -56,7 +80,6 @@ class SearchedMoviesCollectionViewCell: UICollectionViewCell {
     }
     
     // makes sure the image isn't ugly
-    
     func setImageOffset(imageOffset:CGPoint){
         
         self.imageOffset = imageOffset
@@ -68,5 +91,5 @@ class SearchedMoviesCollectionViewCell: UICollectionViewCell {
         
     }
 
-    
+    */
 }

@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import Mixpanel
 class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
  
+    let mixpanel: Mixpanel = Mixpanel.sharedInstance() 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -22,6 +23,7 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
     var searchTerm:String!
     var moreInfoLabel: String!
     var moreInfoPic: UIImage!
+    var movieTitle: String!
     // store results from Flickr in an array
     
     var TMDbResults: NSMutableArray! = NSMutableArray()
@@ -29,17 +31,27 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
     // data that will load the image
     var imageData: NSData!
     var image:UIImage!
+    
+    var movieImages = [UIImage]()
+    var movieTitles = [String]()
+    var movieURLS = [String]()
+    /*var movieTitles = self.TMDbTitles as AnyObject as [String]
+    var swiftArray = self.TMDbResults as AnyObject as [String]*/
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         // Do any additional setup after loading the view.
         loadPosters()
+  
+    
+
+
     }
     
     // loads photos from Flickr
-    
-    func loadPosters(){
+ func loadPosters(){
         // first create a Flickr object
         
         let TMDb: TMDbHelper = TMDbHelper()
@@ -50,10 +62,11 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
             // if there is no error load image on back thread
             if error == nil{
                 dispatch_async(dispatch_get_main_queue(),{ () -> Void in
-                    
-                    self.TMDbResults = moviePoster
-                    self.TMDbTitles = movieTitle
-                    self.collectionView.reloadData()
+                    self.movieURLS = moviePoster as AnyObject as! [String]
+                    self.movieTitles = movieTitle as AnyObject as! [String]
+                    //self.TMDbResults = moviePoster
+                    //self.TMDbTitles = movieTitle
+                    self.reload()
                     
                 })
             }
@@ -62,7 +75,8 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.TMDbResults.count
+        println(self.movieURLS.count)
+        return self.movieURLS.count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -70,15 +84,17 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
         
         // capture title of selected cell
         moreInfoLabel = cellSelected.label.text!
-        moreInfoPic = cellSelected.imageURL
-        println(moreInfoLabel)
-        //create an instance of the view controlle
+        moreInfoPic = cellSelected.imageView.image
+       
+        
+       
         
         performSegueWithIdentifier("moreInfo", sender: self)
         
         
         
     }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destViewController: MoreInformationViewController = segue.destinationViewController as! MoreInformationViewController
@@ -91,9 +107,9 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell:SearchedMoviesCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("MovieCell", forIndexPath: indexPath) as! SearchedMoviesCollectionViewCell
+        var error: NSError?
         
-        cell.image = UIImage(named: "NoPoster.png")
-        
+        if(error == nil){
         let queue: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         
         dispatch_async(queue, { () -> Void in
@@ -102,48 +118,87 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
             
             //pointer to flickr results
             
-            var searchURL: String = self.TMDbResults.objectAtIndex(indexPath.item) as! String
-            var movieTitle: String = self.TMDbTitles.objectAtIndex(indexPath.item) as! String
+            var searchURL = self.movieURLS[indexPath.row]
+            self.movieTitle  = self.movieTitles[indexPath.row]
             
-            cell.label.text = movieTitle
             if  searchURL == "http://image.tmdb.org/t/p/w300/nil"{
-                //cell.image = UIImage(named: "NoPoster.png")
+                cell.label.text = self.movieTitles[indexPath.row]
+                self.movieImages.append(cell.imageView.image!)
+
             }
-                
+            
             else{
-                
                 self.imageData = NSData(contentsOfURL: NSURL(string: searchURL)!, options: nil, error: &error)!
                 
                 // if there is no error download synchronously to display on UI
                 if error == nil{
-                    self.image = UIImage(data: self.imageData)!
-                    
+                    self.image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.movieURLS[indexPath.row])!, options: nil, error: &error)!)!
+                   
                     dispatch_async(dispatch_get_main_queue(), {
-                        cell.image = self.image
+                     
+                         self.movieImages.append(self.image)
+                         println(self.movieImages.count)
+                         println(indexPath.row)
+                        cell.imageView.image = self.image
                         cell.imageURL = self.image
-                        let yOffset: CGFloat = ((collectionView.contentOffset.y - cell.frame.origin.y)/200) * 25
-                        cell.imageOffset = CGPointMake(0, yOffset)
+                        cell.label.text = self.movieTitles[indexPath.row]
                         
-                    })
+                       /* let yOffset: CGFloat = ((collectionView.contentOffset.y - cell.frame.origin.y)/200) * 25
+                        cell.imageOffset = CGPointMake(0, yOffset)*/
+                        })
                     
+
+               
+            }
+                else{
+                    println("error")
                 }
             }
         })
-        
-        
-        
-        
+            
+    }
+            
+        else{
+            println("Error")
+        }
+      
         return cell
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        
+    
+    /*override func touchesBegan(touches: Set <NSObject>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            self.view.endEditing(true)
+        }
+        super.touchesBegan(touches, withEvent:event!)
+    }
+ */
+    func reload (){
+        self.collectionView.reloadData()
+    }
+    
+   
+    
+  /*  func scrollViewDidScroll(scrollView: UIScrollView) {
+        println("here")
         /*for view in collectionView.visibleCells(){
         var view: FlickrCollectionViewCell = view as! FlickrCollectionViewCell
         let yOffset: CGFloat = collectionView.contentOffset.y - view.frame.origin.y)
         }*/
         
-    }
+    }*/
+    
+//    func calcCellWidth(size: CGSize) -> CGFloat {
+//        let transitionToWide = size.width > size.height
+//        var cellWidth = size.width / 2
+//        
+//        if transitionToWide {
+//            cellWidth = size.width / 3
+//        }
+//        
+//        return cellWidth
+//    }
+//
 
     
     

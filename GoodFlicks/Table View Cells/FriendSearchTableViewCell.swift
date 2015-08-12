@@ -7,6 +7,7 @@
 //
 import UIKit
 import Parse
+import Mixpanel
 
 protocol FriendSearchTableViewCellDelegate: class {
     func cell(cell: FriendSearchTableViewCell, didSelectFollowUser user: PFUser)
@@ -14,7 +15,7 @@ protocol FriendSearchTableViewCellDelegate: class {
 }
 
 class FriendSearchTableViewCell: UITableViewCell {
-   
+   let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
     
@@ -39,6 +40,7 @@ class FriendSearchTableViewCell: UITableViewCell {
     }
     
     @IBAction func followButtonTapped(sender: AnyObject) {
+        mixpanel.track("FollowButtonTapped")
         if let canFollow = canFollow where canFollow == true {
             delegate?.cell(self, didSelectFollowUser: user!)
             self.canFollow = false
@@ -48,4 +50,5 @@ class FriendSearchTableViewCell: UITableViewCell {
         }
     }
 }
+
 

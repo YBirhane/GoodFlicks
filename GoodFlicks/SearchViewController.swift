@@ -7,18 +7,19 @@
 //
 
 import UIKit
-
+import Mixpanel
 class SearchViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
 
-
+    @IBOutlet var myView: UIView!
+    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
    
     var step: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        myView.backgroundColor = UIColor(patternImage: UIImage(named: "MaskCopy.png")!)
         // Enables keyboard immediately
         searchBar.becomeFirstResponder()
         searchBar.delegate = self
@@ -35,6 +36,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         // clears searchBar when x is clicked
         
         searchBar.text = ""
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        performSegueWithIdentifier("searchMovies", sender: self)
+        mixpanel.track("Search for Movies Button Clicked")
     }
     
     // Gets text from SearchBar and sends it to GalleryViewController
@@ -59,11 +65,22 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     }
     
     
+    override func touchesBegan(touches: Set <NSObject>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            self.view.endEditing(true)
+        }
+        super.touchesBegan(touches, withEvent:event!)
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+     override func viewWillAppear(animated: Bool) {
+      searchBar.text = ""
+    }
 
     
 
