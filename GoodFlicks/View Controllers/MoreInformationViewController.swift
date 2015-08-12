@@ -16,6 +16,7 @@ class MoreInformationViewController: UIViewController {
     let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     var movieTitleText = String()
     var moviePosterImage = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          infoView.backgroundColor = UIColor(patternImage: UIImage(named: "MaskCopy.png")!)

@@ -75,11 +75,12 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        println(self.movieURLS.count)
+        
         return self.movieURLS.count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         var cellSelected = collectionView.cellForItemAtIndexPath(indexPath) as! SearchedMoviesCollectionViewCell
         
         // capture title of selected cell
@@ -143,8 +144,7 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
                         cell.imageURL = self.image
                         cell.label.text = self.movieTitles[indexPath.row]
                         
-                       /* let yOffset: CGFloat = ((collectionView.contentOffset.y - cell.frame.origin.y)/200) * 25
-                        cell.imageOffset = CGPointMake(0, yOffset)*/
+                 
                         })
                     
 
@@ -165,40 +165,12 @@ class SearchedMoviesViewController: UIViewController, UICollectionViewDataSource
         return cell
     }
     
-    
-    /*override func touchesBegan(touches: Set <NSObject>, withEvent event: UIEvent?) {
-        if let touch = touches.first {
-            self.view.endEditing(true)
-        }
-        super.touchesBegan(touches, withEvent:event!)
-    }
- */
+ 
     func reload (){
         self.collectionView.reloadData()
     }
     
    
-    
-  /*  func scrollViewDidScroll(scrollView: UIScrollView) {
-        println("here")
-        /*for view in collectionView.visibleCells(){
-        var view: FlickrCollectionViewCell = view as! FlickrCollectionViewCell
-        let yOffset: CGFloat = collectionView.contentOffset.y - view.frame.origin.y)
-        }*/
-        
-    }*/
-    
-//    func calcCellWidth(size: CGSize) -> CGFloat {
-//        let transitionToWide = size.width > size.height
-//        var cellWidth = size.width / 2
-//        
-//        if transitionToWide {
-//            cellWidth = size.width / 3
-//        }
-//        
-//        return cellWidth
-//    }
-//
 
     
     
