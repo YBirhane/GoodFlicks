@@ -8,15 +8,22 @@
 
 import UIKit
 import Mixpanel
+import Parse
+import ParseUI
 
-class AskAnsweredTableViewCell: UITableViewCell {
+class AskAnsweredTableViewCell: PFTableViewCell {
     let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-    @IBOutlet weak var askAnsweredMoviePoster: UIImageView!
+//    @IBOutlet weak var askAnsweredMoviePoster: PFImageView!
+//    
+//    @IBOutlet weak var askAnsweredMovieTitle: UILabel!
+    
+   
+    @IBOutlet weak var askAnsweredMoviePoster: PFImageView!
+    
     
     @IBOutlet weak var askAnsweredMovieTitle: UILabel!
     
-   
-    
+    @IBOutlet weak var numberOfReplies: UILabel!
     //@IBOutlet weak var numberOfReplies: UILabel!
     //var askMovieTitle: String!
     //var askMoviePoster: UIImage!

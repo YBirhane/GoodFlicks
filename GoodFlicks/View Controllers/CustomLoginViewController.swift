@@ -11,7 +11,7 @@ import Parse
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
-import ParseFacebookUtilsV4
+
 import Mixpanel
 
 class CustomLogInViewController: UIViewController {
@@ -24,7 +24,7 @@ class CustomLogInViewController: UIViewController {
         var permissions = [ "public_profile", "email", "user_friends" ]
         
         mixpanel.track("Network Login", properties : ["Network" : "Facebook"])
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions,  block: { (user: PFUser?, error: NSError?) -> Void in
+       /* PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions,  block: { (user: PFUser?, error: NSError?) -> Void in
             
             if let user = user {
                 
@@ -49,7 +49,7 @@ class CustomLogInViewController: UIViewController {
             
                 
             
-        })
+        })*/
         
      
     

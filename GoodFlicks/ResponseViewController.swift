@@ -20,6 +20,7 @@ class ResponseViewController: UIViewController, UITableViewDataSource, UITableVi
     let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     var askID: String!
     
+    var currentObject : PFObject?
     //var setAskID: String!
     
     // objectId of rater
@@ -81,10 +82,12 @@ class ResponseViewController: UIViewController, UITableViewDataSource, UITableVi
 
 
     func getRatings(){
-        var myRatings = PFObject(withoutDataWithClassName: "Ask", objectId: askID)
+        println(currentObject!.objectId!)
+        var myRatings = PFObject(withoutDataWithClassName: "Ask", objectId: currentObject!.objectId!)
         var query = PFQuery(className: "Rating")
-        query.whereKey("Ask", equalTo: myRatings)
+        query.whereKey("Ask", equalTo: currentObject!.objectId!)
         query.findObjectsInBackgroundWithBlock{ (ratings: [AnyObject]?, error: NSError?)  in
+            println(ratings)
             if let obj = ratings{
                 
                 for rate in obj{
