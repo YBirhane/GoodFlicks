@@ -9,16 +9,17 @@
 import UIKit
 import Parse
 import Mixpanel
-class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableViewDelegate {
+class NewsFeedViewController: UIViewController   {
 
 
-    @IBOutlet weak var tableView: UITableView!
+  /*  @IBOutlet weak var tableView: UITableView!
     let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     // Retrieve's Asks title and image and username
     var movieTitle: String!
     var moreInfoPic: UIImage!
     var titles = [String]()
     var posterImages = [UIImage]()
+    var pfposterImages = [PFFile]()
     var askerUsername = [String]()
     var asks = [AnyObject]()
     //Id of ask user is responding to
@@ -32,8 +33,8 @@ class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableV
   
     // ID of Cell's Ask
     var cellAskID: String!
-
-   
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +44,7 @@ class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableV
         tableView.backgroundColor = UIColor(patternImage: UIImage(named: "MaskCopy.png")!)
         self.getAsks()
         
-        //self.getImages()
-  
-        // Do any additional setup after loading the view.
+        
     }
     
 
@@ -62,6 +61,7 @@ class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableV
         var query = PFQuery(className: "Ask")
         query.whereKey("User", notEqualTo: PFUser.currentUser()!)
         query.orderByDescending("createdAt")
+
         query.findObjectsInBackgroundWithBlock{ (asks: [AnyObject]?, error: NSError?)  in
             if let obj = asks{
                 self.asks = obj
@@ -76,49 +76,44 @@ class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableV
                     
                     // retrieving movie title from Ask and poster image
                     self.titles.append(ask["Title"] as! String)
-                    self.tableView.reloadData()
-                    //println(self.titles)
-                
-                    // stores Ask's objectID
+                    
                     self.askID.append(askIdentification.objectId!)
                     
-                    self.tableView.reloadData()
                   
-                    // stores Askers's userID
-                    //self.userID.append(user.objectId!)
-                
-                    //self.getUsers()
                     
                     
                     let picture = ask["imageFile"] as! PFFile
+                   
+                        
                     picture.getDataInBackgroundWithBlock({ (data, error) -> Void in
-                        //self.tableView.reloadData()
-                        var image = UIImage(data: data!)
+                            //self.tableView.reloadData()
+                            var image = UIImage(data: data!)
+                            
+                                                        //self.tableView.reloadData()
                         
-                        self.posterImages.append(image!)
-                        self.tableView.reloadData()
-                        
-                        
+                            
+                            
+                            self.posterImages.append(image!)
+                            
+                            
                        
                         
-                    })
+                            
+                            
+                        })
+                    
+
+
+                    
                     var queryUserId = ask["User"] as! PFObject
                     self.userID.append(queryUserId.objectId!)
-                    //println(queryUserId.objectForKey("PFUser"))
-                    //self.askerUsername.append(queryUserId.username!)
-                    //println(self.askerUsername)
-                    /*let askUser = ask["User"] as! PFObject
-                    let username = askUser as! PFUser
-                    self.askerUsername.append(username.username!)
-                    println(self.askerUsername)
-                    self.tableView.reloadData()*/
+            
                     
                 
-                    
+                    self.tableView.reloadData()
                 }
             }
-            println(self.userID)
-            println(self.askID)
+            
             self.getUsers(self.userID)
 
         }
@@ -138,14 +133,13 @@ class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableV
                     for user in obj{
                         
                         self.askerUsername.append(user["username"] as! String)
-                        //println(self.askerUsername)
-                        //self.tableView.reloadData()
+                       
 
                     }
                     
 
                 }
-            println(self.askerUsername)
+            
               self.tableView.reloadData()
             }
     
@@ -176,10 +170,12 @@ class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableV
             
                let cell:NewsFeedTableViewCell = tableView.dequeueReusableCellWithIdentifier("NFCell") as! NewsFeedTableViewCell
             if  titles.count  == posterImages.count && titles.count == askerUsername.count{
-                //if titles.count == posterImages.count{
+                
                 cell.movieTitle.text = titles[indexPath.row]
+                
                 cell.posterImage.image = posterImages[indexPath.row]
                 cell.userLabel.text = askerUsername[indexPath.row]
+                
             }
 
             
@@ -189,11 +185,8 @@ class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int{
-            println(self.askerUsername.count)
-            println(self.titles.count)
-            println(self.posterImages.count)
             if  titles.count  == posterImages.count && titles.count == askerUsername.count{
-                //if titles.count == posterImages.count{
+                
                 return userID.count
             }
               else{
@@ -203,14 +196,16 @@ class NewsFeedViewController: UIViewController  ,UITableViewDataSource, UITableV
         }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.movieTitle = titles[indexPath.row]
-        self.cellID = userID[indexPath.row]
-        self.cellAskID = askID[indexPath.row]
-        self.moreInfoPic = posterImages[indexPath.row]
-        self.performSegueWithIdentifier("Rate", sender: self)
-        mixpanel.track("Selected to see Asked Movie")
+        //let cell:NewsFeedTableViewCell = tableView.dequeueReusableCellWithIdentifier("NFCell") as! NewsFeedTableViewCell
+
+        //self.movieTitle = cell.movieTitle.text
+//        self.cellID = userID[indexPath.row]
+//        self.cellAskID = askID[indexPath.row]
+//        self.moreInfoPic = posterImages[indexPath.row]
+      //self.performSegueWithIdentifier("Rate", sender: self)
+//        mixpanel.track("Selected to see Asked Movie")
     }
     
-
+*/
 
 }

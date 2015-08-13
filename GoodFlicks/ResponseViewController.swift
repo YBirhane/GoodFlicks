@@ -19,6 +19,7 @@ class ResponseViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     var askID: String!
+    
     //var setAskID: String!
     
     // objectId of rater

@@ -8,10 +8,11 @@
 
 import UIKit
 import Mixpanel
+import ParseUI
 
-class NewsFeedTableViewCell: UITableViewCell {
+class NewsFeedTableViewCell: PFTableViewCell {
     let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-   @IBOutlet weak var posterImage: UIImageView!
+  /* @IBOutlet weak var posterImage: PFImageView!
     
     @IBOutlet weak var movieTitle: UILabel!
     
@@ -20,7 +21,15 @@ class NewsFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var askedAbout: UILabel!
     
     @IBOutlet weak var userLabel: UILabel!
+    */
     
+    @IBOutlet weak var posterImage: PFImageView!
+    
+    @IBOutlet weak var askedAbout: UILabel!
+    
+    @IBOutlet weak var movieTitle: UILabel!
+    
+    @IBOutlet weak var userLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

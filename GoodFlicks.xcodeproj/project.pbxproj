@@ -10,6 +10,7 @@
 		3A8FD778B6D57A12CE47DA22 /* Pods_GoodFlicks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D375886D1513D3101E6068 /* Pods_GoodFlicks.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3C038D451B72BC2B005A674D /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C038D441B72BC2B005A674D /* ResponseViewController.swift */; };
 		3C038D471B72BD8F005A674D /* ResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C038D461B72BD8F005A674D /* ResponseTableViewCell.swift */; };
+		3C25C27B1B7C6507007988AC /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C25C27A1B7C6507007988AC /* NewsFeedTableViewController.swift */; };
 		3C32F73E1B5D64C8003831A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32F73D1B5D64C8003831A5 /* AppDelegate.swift */; };
 		3C32F7451B5D64C8003831A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C32F7441B5D64C8003831A5 /* Images.xcassets */; };
 		3C32F76A1B5D6640003831A5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C32F7641B5D6640003831A5 /* Bolts.framework */; };
@@ -77,6 +78,7 @@
 /* Begin PBXFileReference section */
 		3C038D441B72BC2B005A674D /* ResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
 		3C038D461B72BD8F005A674D /* ResponseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseTableViewCell.swift; path = ../ResponseTableViewCell.swift; sourceTree = "<group>"; };
+		3C25C27A1B7C6507007988AC /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
 		3C32F7381B5D64C8003831A5 /* GoodFlicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodFlicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C32F73C1B5D64C8003831A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C32F73D1B5D64C8003831A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				3C3415D81B71CC9A009DF288 /* NewsFeedViewController.swift */,
 				3C3415DE1B71F1A7009DF288 /* AskAnsweredViewController.swift */,
 				3C3415DC1B71E1F3009DF288 /* RatingViewController.swift */,
+				3C25C27A1B7C6507007988AC /* NewsFeedTableViewController.swift */,
 				3C038D441B72BC2B005A674D /* ResponseViewController.swift */,
 				3C4B63381B7A64CE00AE2F03 /* InstructionsViewController.swift */,
 			);
@@ -669,6 +672,7 @@
 				3C038D471B72BD8F005A674D /* ResponseTableViewCell.swift in Sources */,
 				3C3415DD1B71E1F3009DF288 /* RatingViewController.swift in Sources */,
 				3CC391AE1B643266008BA5CA /* FriendSearchViewController.swift in Sources */,
+				3C25C27B1B7C6507007988AC /* NewsFeedTableViewController.swift in Sources */,
 				3C32F73E1B5D64C8003831A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

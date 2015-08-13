@@ -10,6 +10,8 @@ import UIKit
 import Parse
 import FBSDKCoreKit
 import FBSDKLoginKit
+import FBSDKShareKit
+import ParseFacebookUtilsV4
 import Mixpanel
 
 class CustomLogInViewController: UIViewController {
@@ -49,82 +51,7 @@ class CustomLogInViewController: UIViewController {
             
         })
         
-     /*   func getUsername(){
-            if let session = PFFacebookUtils.session() {
-                if session.isOpen {
-                    println("session is open")
-                    FBRequestConnection.startForMeWithCompletionHandler({ (connection: FBRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
-                        println("done me request")
-                        if error != nil {
-                            println("facebook me request - error is not nil :(")
-                        } else {
-                            println("facebook me request - error is nil :)")
-                            println(result)
-                            // You have 2 ways to access the result:
-                            // 1)
-                            println(result["name"])
-                            println(result["id"])
-                            // 2)
-                            println(result.name)
-                            println(result.objectID)
-                            // Save to Parse:
-                            PFUser.currentUser().username = result.name
-                            PFUser.currentUser().setValue(result.objectID, forKey: "fbId")
-                            PFUser.currentUser().saveEventually() // Always use saveEventually if you want to be sure that the save will succeed
-                        }
-                    })
-                }
-            }
-        }
-    */
-        
-//        
-//        FBSDKSession.openActiveSessionWithReadPermissions(["public_profile", "email", "user_friends"] , allowLoginUI: true, completionHandler: { (session:FBSession!, state:FBSessionState, error:NSError!) -> Void in
-//            if (error==nil)
-//            {
-//                FBRequest.requestForMe().startWithCompletionHandler({ (connection:FBRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
-//                    
-//                    if (error==nil)
-//                    {
-//                        
-//                        var bUserFacebookDict = result as! NSDictionary
-//                        
-//                        let FB_USER_ID = bUserFacebookDict["id"]! as! String
-//                        
-//                        // now call FB graph API to to Get username of the user.
-//                        var graphProfileURL = NSURL(string: "https://graph.facebook.com/?id=\(FB_USER_ID)")
-//                        
-//                        
-//                        var request1: NSURLRequest = NSURLRequest(URL: graphProfileURL!)
-//                        var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?
-//                        >=nil
-//                        var error: NSErrorPointer = nil
-//                        var dataVal: NSData =  NSURLConnection.sendSynchronousRequest(request1, returningResponse: response, error:nil)!
-//                        var err: NSError
-//                        println(response)
-//                        var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataVal, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-//                        println("Synchronous\(jsonResult)")
-//                        
-//                        
-//                        let FB_USER_NAME = jsonResult["username"]! as! String //finally you will get username
-//                        
-//                        
-//                    }
-//                    else
-//                    {
-//                        //Utility.showErrorAlert(error.description)
-//                    }
-//                })
-//            }
-//        })
-//        
-//        
-//        
-//        
-        
-        
-        
-       
+     
     
 }
     
