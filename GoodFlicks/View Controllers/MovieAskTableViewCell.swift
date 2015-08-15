@@ -23,6 +23,25 @@ class MovieAskTableViewCell: UITableViewCell {
     @IBOutlet weak var checkBoxImage: UIImageView!
     
     
+    var isChecked: Bool {
+        
+        get {
+            if self.checkBoxImage.image == UIImage(named: "CheckboxUnchecked-1.png") {
+                return false
+            } else {
+                return true
+            }
+        }
+        
+        set {
+            if newValue {
+                self.checkBoxImage.image = UIImage(named: "CheckboxChecked.png")
+            } else {
+                self.checkBoxImage.image = UIImage(named: "CheckboxUnchecked-1.png")
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         checkBoxImage.image = UIImage(named: "CheckboxUnchecked-1.png")

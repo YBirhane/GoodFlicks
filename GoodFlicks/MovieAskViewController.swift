@@ -22,6 +22,9 @@ class MovieAskViewController: UIViewController, UITableViewDataSource, UITableVi
     var moviePosterImage = UIImage()
     
     
+    var checkedCellsSet = Set<NSIndexPath>()
+    
+    
     var username = "username"
     
     // Friends list and IDs retrieved from Parse
@@ -107,6 +110,14 @@ class MovieAskViewController: UIViewController, UITableViewDataSource, UITableVi
             //cell.user!.username = friendsList[indexPath.row]
             
             
+//            cell.checkBoxImage.image = UIImage(named: "CheckboxUnchecked-1.png")
+            
+//            if self.checkedCellsSet.contains(indexPath) {
+//                cell.checkBoxImage.image = UIImage(named: "CheckboxChecked.png")
+//            }
+            
+            cell.isChecked = (self.checkedCellsSet.contains(indexPath))
+            
             
             return cell
     }
@@ -119,23 +130,43 @@ class MovieAskViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var rowSelected = tableView.cellForRowAtIndexPath(indexPath) as! MovieAskTableViewCell
         
-        if (rowSelected.checkBoxImage.image  == UIImage(named: "CheckboxChecked.png")){
+        var rowSelected = tableView.cellForRowAtIndexPath(indexPath) as! MovieAskTableViewCell
+
+        
+        if rowSelected.isChecked {
+            self.checkedCellsSet.remove(indexPath)
             println(friendsListID[indexPath.row])
             removeObject(rowSelected.askFriendLabel.text! , fromArray: &selectedFriends)
             removeObject(friendsListID[indexPath.row], fromArray: &selectedFriendsID)
-            rowSelected.checkBoxImage.image = UIImage(named: "CheckboxUnchecked-1.png")
-         }
-        
-        else{
-        
-         rowSelected.checkBoxImage.image = UIImage(named: "CheckboxChecked.png")
-         selectedFriends.append(rowSelected.askFriendLabel.text!)
-         selectedFriendsID.append(friendsListID[indexPath.row])
-         println(selectedFriends)
-         println(selectedFriendsID)
+        } else {
+            self.checkedCellsSet.insert(indexPath)
+            selectedFriends.append(rowSelected.askFriendLabel.text!)
+            selectedFriendsID.append(friendsListID[indexPath.row])
         }
+        
+        rowSelected.isChecked = !rowSelected.isChecked
+        
+//        if (rowSelected.checkBoxImage.image  == UIImage(named: "CheckboxChecked.png")){
+//            
+//            self.checkedCellsSet.remove(indexPath)
+//            
+//            println(friendsListID[indexPath.row])
+//            removeObject(rowSelected.askFriendLabel.text! , fromArray: &selectedFriends)
+//            removeObject(friendsListID[indexPath.row], fromArray: &selectedFriendsID)
+//            rowSelected.checkBoxImage.image = UIImage(named: "CheckboxUnchecked-1.png")
+//         }
+//        
+//        else{
+//            
+//            self.checkedCellsSet.insert(indexPath)
+//        
+//         rowSelected.checkBoxImage.image = UIImage(named: "CheckboxChecked.png")
+//         selectedFriends.append(rowSelected.askFriendLabel.text!)
+//         selectedFriendsID.append(friendsListID[indexPath.row])
+//         println(selectedFriends)
+//         println(selectedFriendsID)
+//        }
     }
 
    
