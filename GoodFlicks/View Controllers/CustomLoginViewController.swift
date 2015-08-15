@@ -11,7 +11,7 @@ import Parse
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
-import ParseFacebookUtilsV4
+
 import Mixpanel
 
 class CustomLogInViewController: UIViewController {

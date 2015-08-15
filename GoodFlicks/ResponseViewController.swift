@@ -6,20 +6,22 @@
 //  Copyright (c) 2015 Yeabtsega Birhane. All rights reserved.
 //
 
+
 import UIKit
 import Parse
+import ParseUI
 import Mixpanel
 
 class ResponseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var movieTitleLabel: UILabel!
     
-    @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var moviePoster: PFImageView!
     
     @IBOutlet weak var tableView: UITableView!
     let mixpanel: Mixpanel = Mixpanel.sharedInstance()
     var askID: String!
-    
+    var currentObject : PFObject?
     //var setAskID: String!
     
     // objectId of rater
@@ -39,22 +41,39 @@ class ResponseViewController: UIViewController, UITableViewDataSource, UITableVi
         movieTitleLabel.text = responseMovieTitle
         moviePoster.image = responseMovieImage
         
+        if let object = currentObject {
+            movieTitleLabel.text = object["Title"] as? String
+            
+            var initialThumbnail = UIImage(named: "question")
+            moviePoster.image = initialThumbnail
+            
+            if let thumbnail = object["imageFile"] as? PFFile {
+                moviePoster.file = thumbnail
+                moviePoster.loadInBackground()
+            }
+        }
+        
+        
+        
+        
+        
+        
         tableView.dataSource = self
         tableView.delegate = self
         self.getRatings()
         
-     
- 
+        
+        
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
             println(comment.count)
@@ -78,10 +97,10 @@ class ResponseViewController: UIViewController, UITableViewDataSource, UITableVi
             }
             
     }
-
-
+    
+    
     func getRatings(){
-        var myRatings = PFObject(withoutDataWithClassName: "Ask", objectId: askID)
+        var myRatings = PFObject(withoutDataWithClassName: "Ask", objectId: currentObject!.objectId!)
         var query = PFQuery(className: "Rating")
         query.whereKey("Ask", equalTo: myRatings)
         query.findObjectsInBackgroundWithBlock{ (ratings: [AnyObject]?, error: NSError?)  in
@@ -95,39 +114,39 @@ class ResponseViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.raterId.append(rater.objectId!)
                     
                     
-                  
+                    
                     
                 }
             }
-           
+            
             self.getUser(self.raterId)
-       
+            
         }
     }
-            
+    
     
     func getUser(rates: [String]){
         
-            for ids in rates{
-           
+        for ids in rates{
+            
             var query = PFQuery(className: "_User")
             query.whereKey("objectId", equalTo: ids)
             query.findObjectsInBackgroundWithBlock{ (ratings: [AnyObject]?, error: NSError?)  in
                 if let obj = ratings{
                     
                     for rate in obj{
-                    self.responseUser.append(rate["username"] as! String)
-                    
-                    
+                        self.responseUser.append(rate["username"] as! String)
+                        
+                        
                         
                     }
                 }
                 println(self.responseUser.count)
                 self.tableView.reloadData()
-                }
             }
-//        println("here4")
-//        println(self.responseUser.count)
+        }
+        //        println("here4")
+        //        println(self.responseUser.count)
         //self.tableView.reloadData()
         
     }
