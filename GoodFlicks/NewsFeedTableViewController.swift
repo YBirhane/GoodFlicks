@@ -12,29 +12,6 @@ import ParseUI
 
 class NewsFeedTableViewController: PFQueryTableViewController {
     
-    // Sign the user out
-    //	@IBAction func signOut(sender: AnyObject) {
-    //
-    //		PFUser.logOut()
-    //
-    //		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //		let vc = storyboard.instantiateViewControllerWithIdentifier("SignUpInViewController") as! UIViewController
-    //		self.presentViewController(vc, animated: true, completion: nil)
-    //	}
-    //
-    //	@IBAction func add(sender: AnyObject) {
-    //
-    //		dispatch_async(dispatch_get_main_queue()) {
-    //			self.performSegueWithIdentifier("TableViewToDetailView", sender: self)
-    //		}
-    //	}
-    //
-    // Initialise the PFQueryTable tableview
-//    override init(style: UITableViewStyle, className: String!) {
-//        super.init(style: style, className: className)
-//        
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = UIColor(patternImage: UIImage(named: "MaskCopy.png")!)
